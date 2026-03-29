@@ -7,13 +7,22 @@ const ArticleTemplate = ({ data }) => {
   const post = data.markdownRemark
   const title = post.frontmatter.title
   const date = post.frontmatter.date
+  const authorName = data.site.siteMetadata.author.name
 
   return (
     <Layout>
       <article className="article">
         <header className="article-header">
           {title && <h1 className="article-title">{title}</h1>}
-          {date && <time className="article-date">{date}</time>}
+          <div className="article-meta">
+            <span className="article-author">{authorName}</span>
+            {date && (
+              <>
+                <span className="article-meta-sep">/</span>
+                <time className="article-date">{date}</time>
+              </>
+            )}
+          </div>
         </header>
         <div
           className="article-body"
@@ -35,11 +44,18 @@ export default ArticleTemplate
 
 export const query = graphql`
   query ($id: String!) {
+    site {
+      siteMetadata {
+        author {
+          name
+        }
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
-        date(formatString: "MMM D, YYYY")
+        date(formatString: "MMMM D, YYYY")
         source_url
       }
     }

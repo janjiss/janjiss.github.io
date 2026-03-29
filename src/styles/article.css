@@ -19,9 +19,24 @@
   color: var(--color-fg);
 }
 
-.article-date {
+.article-meta {
   font-family: var(--font-mono);
   font-size: 0.72rem;
+  color: var(--color-fg-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.article-author {
+  color: var(--color-fg);
+}
+
+.article-meta-sep {
+  color: var(--color-border);
+}
+
+.article-date {
   color: var(--color-fg-muted);
 }
 

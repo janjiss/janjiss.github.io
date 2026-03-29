@@ -6,6 +6,10 @@ module.exports = {
     title: `janis.wtf`,
     description: `Personal site`,
     siteUrl: `https://janis.wtf`,
+    author: {
+      name: `Janis Miezitis`,
+      url: `https://github.com/janjiss`,
+    },
   },
   plugins: [
     {

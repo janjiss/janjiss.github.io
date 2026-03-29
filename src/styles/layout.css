@@ -42,6 +42,15 @@
   color: var(--color-fg-muted);
 }
 
+.footer-author {
+  color: var(--color-fg-muted);
+  text-decoration: none;
+}
+
+.footer-author:hover {
+  color: var(--color-accent);
+}
+
 @media (max-width: 600px) {
   .site-wrapper {
     padding: 2rem 1.25rem 3rem;

@@ -53,7 +53,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           title
-          date(formatString: "MMM D, YYYY")
+          date(formatString: "MMMM D, YYYY")
         }
       }
     }
