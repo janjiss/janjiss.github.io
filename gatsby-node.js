@@ -1,4 +1,5 @@
 const path = require(`path`)
+const fs = require(`fs`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -34,6 +35,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const articleTemplate = path.resolve(`src/templates/article.js`)
+
+  const cname = path.resolve(`CNAME`)
+  if (fs.existsSync(cname)) {
+    fs.copyFileSync(cname, path.resolve(`public/CNAME`))
+  }
 
   result.data.allMarkdownRemark.nodes.forEach(node => {
     createPage({

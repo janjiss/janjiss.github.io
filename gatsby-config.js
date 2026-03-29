@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `janis.wtf`,
     description: `Personal site`,
-    siteUrl: `https://janjiss.github.io`,
+    siteUrl: `https://janis.wtf`,
   },
   plugins: [
     {
