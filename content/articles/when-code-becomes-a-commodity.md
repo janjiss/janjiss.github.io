@@ -1,4 +1,5 @@
 ---
+title: "When Code Becomes a Commodity"
 slug: "/when-code-becomes-a-commodity"
 date: "2026-03-27"
 source_url: "https://gist.github.com/janjiss/6404514bbb906b676a90ef9284c82fd8"
