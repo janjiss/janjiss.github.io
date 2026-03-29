@@ -1,0 +1,28 @@
+.article-prose h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.article-prose h2 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.3;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.article-prose p {
+  margin: 0 0 1rem;
+}
+
+.article-prose a {
+  color: #663399;
+  font-weight: 600;
+}
+
+.article-prose a:hover {
+  text-decoration: underline;
+}
