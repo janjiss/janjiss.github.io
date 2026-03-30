@@ -1,7 +1,7 @@
 .site-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
+  padding: 3.5rem 1.5rem 4.5rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,8 +11,8 @@
 }
 
 .site-header {
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: baseline;
@@ -41,11 +41,11 @@
 }
 
 .site-footer {
-  margin-top: 4rem;
-  padding-top: 1rem;
+  margin-top: 5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--color-border);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--color-fg-muted);
 }
 
@@ -62,10 +62,10 @@
 
 @media (max-width: 600px) {
   .site-wrapper {
-    padding: 2rem 1.25rem 3rem;
+    padding: 2.5rem 1.25rem 3.5rem;
   }
 
   .site-header {
-    margin-bottom: 2.25rem;
+    margin-bottom: 2.5rem;
   }
 }

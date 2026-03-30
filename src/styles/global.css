@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --color-fg: #e0dcd4;
-  --color-fg-bright: #f5f0e8;
+  --color-fg: #e2ded6;
+  --color-fg-bright: #f2eee6;
   --color-fg-muted: #7a7568;
   --color-bg: #08080d;
-  --color-bg-raised: #0f0f16;
-  --color-accent: #e8a020;
-  --color-accent-glow: rgba(232, 160, 32, 0.25);
-  --color-accent-hover: #f0c040;
+  --color-bg-raised: #0e0e15;
+  --color-accent: #3dd68c;
+  --color-accent-glow: rgba(61, 214, 140, 0.2);
+  --color-accent-hover: #5ee8a5;
   --color-border: #1c1c28;
   --color-code-bg: #101018;
   --font-heading: 'Syne', system-ui, sans-serif;
@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +34,7 @@ body {
   font-weight: 400;
   color: var(--color-fg);
   background: var(--color-bg);
-  line-height: 1.75;
+  line-height: 1.8;
   position: relative;
 }
 
@@ -49,8 +49,8 @@ body::after {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.08) 2px,
-    rgba(0, 0, 0, 0.08) 4px
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
   );
 }
 
@@ -63,7 +63,7 @@ body::before {
   z-index: 0;
   background-image: radial-gradient(
     circle,
-    rgba(232, 160, 32, 0.04) 1px,
+    rgba(61, 214, 140, 0.035) 1px,
     transparent 1px
   );
   background-size: 24px 24px;
@@ -82,7 +82,7 @@ a:hover {
 }
 
 ::selection {
-  background: rgba(232, 160, 32, 0.2);
+  background: rgba(61, 214, 140, 0.18);
   color: var(--color-fg-bright);
 }
 
