@@ -28,13 +28,6 @@ const ArticleTemplate = ({ data }) => {
           className="article-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        {post.frontmatter.source_url && (
-          <footer className="article-footer">
-            <a href={post.frontmatter.source_url} rel="noopener noreferrer">
-              View original on GitHub
-            </a>
-          </footer>
-        )}
       </article>
     </Layout>
   )
@@ -56,7 +49,6 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")
-        source_url
       }
     }
   }
