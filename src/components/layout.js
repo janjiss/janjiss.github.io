@@ -20,22 +20,25 @@ const Layout = ({ children }) => {
   const author = data.site.siteMetadata.author
 
   return (
-    <div className="site-wrapper">
-      <header className="site-header">
-        <Link to="/" className="site-title">
-          janis.wtf
-        </Link>
-      </header>
-      <main className="site-main">{children}</main>
-      <footer className="site-footer">
-        <span>
-          &copy; {new Date().getFullYear()}{" "}
-          <a href={author.url} className="footer-author">
-            {author.name}
-          </a>
-        </span>
-      </footer>
-    </div>
+    <>
+      <div className="crt-vignette" />
+      <div className="site-wrapper">
+        <header className="site-header">
+          <Link to="/" className="site-title">
+            janis.wtf<span className="cursor-blink">_</span>
+          </Link>
+        </header>
+        <main className="site-main">{children}</main>
+        <footer className="site-footer">
+          <span>
+            &copy; {new Date().getFullYear()}{" "}
+            <a href={author.url} className="footer-author">
+              {author.name}
+            </a>
+          </span>
+        </footer>
+      </div>
+    </>
   )
 }
 

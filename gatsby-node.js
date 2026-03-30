@@ -10,6 +10,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node.frontmatter.slug ||
       createFilePath({ node, getNode, basePath: `articles` })
     createNodeField({ node, name: `slug`, value: slug })
+
+    const words = (node.internal.content || ``).split(/\s+/).filter(Boolean).length
+    const minutes = Math.max(1, Math.ceil(words / 230))
+    createNodeField({ node, name: `readingTime`, value: `${minutes} min read` })
   }
 }
 

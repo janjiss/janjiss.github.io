@@ -1,3 +1,16 @@
+.last-login {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-fg-muted);
+  margin-bottom: 2rem;
+  animation: terminalIn 0.3s ease both;
+}
+
+.post-prompt {
+  color: var(--color-accent);
+  opacity: 0.6;
+}
+
 .post-list {
   list-style: none;
   padding: 0;

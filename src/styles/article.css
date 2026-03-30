@@ -40,6 +40,10 @@
   color: var(--color-fg-muted);
 }
 
+.article-reading-time {
+  color: var(--color-fg-muted);
+}
+
 .article-body h1 {
   display: none;
 }
@@ -129,8 +133,20 @@
 
 .article-body hr {
   border: none;
-  border-top: 1px solid var(--color-border);
   margin: 3rem 0;
+  text-align: center;
+  overflow: visible;
+  height: auto;
+  line-height: 1;
+}
+
+.article-body hr::after {
+  content: '═══════════════════════';
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-border);
+  letter-spacing: 0.1em;
 }
 
 .article-body strong {
