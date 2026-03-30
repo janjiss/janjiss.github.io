@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --color-fg: #111;
-  --color-fg-muted: #636363;
-  --color-bg: #fafafa;
-  --color-accent: #0055cc;
-  --color-accent-hover: #003d99;
-  --color-border: #e0e0e0;
-  --color-code-bg: #f2f2f2;
-  --font-heading: 'Bricolage Grotesque', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --color-fg: #e0dcd4;
+  --color-fg-bright: #f5f0e8;
+  --color-fg-muted: #7a7568;
+  --color-bg: #08080d;
+  --color-bg-raised: #0f0f16;
+  --color-accent: #e8a020;
+  --color-accent-glow: rgba(232, 160, 32, 0.25);
+  --color-accent-hover: #f0c040;
+  --color-border: #1c1c28;
+  --color-code-bg: #101018;
+  --font-heading: 'Syne', system-ui, sans-serif;
+  --font-body: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
   --max-width: 44rem;
 }
 
@@ -21,7 +24,7 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,21 +34,56 @@ body {
   font-weight: 400;
   color: var(--color-fg);
   background: var(--color-bg);
-  line-height: 1.7;
+  line-height: 1.75;
+  position: relative;
+}
+
+/* Scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* Dot grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(232, 160, 32, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
 }
 
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color 0.15s ease;
+  text-shadow: 0 0 8px var(--color-accent-glow);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 a:hover {
   color: var(--color-accent-hover);
+  text-shadow: 0 0 14px var(--color-accent-glow);
 }
 
 ::selection {
-  background: rgba(0, 85, 204, 0.12);
+  background: rgba(232, 160, 32, 0.2);
+  color: var(--color-fg-bright);
 }
 
 img {
@@ -53,7 +91,18 @@ img {
   height: auto;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes terminalIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: brightness(1.8);
+  }
+  40% {
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1);
+  }
 }

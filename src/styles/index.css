@@ -5,8 +5,8 @@
 }
 
 .post-item {
-  animation: fadeIn 0.35s ease both;
-  animation-delay: calc(var(--i, 0) * 0.06s + 0.1s);
+  animation: terminalIn 0.4s ease both;
+  animation-delay: calc(var(--i, 0) * 0.08s + 0.12s);
 }
 
 .post-link {
@@ -14,31 +14,35 @@
   justify-content: space-between;
   align-items: baseline;
   gap: 2rem;
-  padding: 0.7rem 0;
+  padding: 0.75rem 0;
   text-decoration: none;
   color: var(--color-fg);
+  text-shadow: none;
   border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s ease;
 }
 
 .post-link:hover {
   text-decoration: none;
+  background: var(--color-bg-raised);
 }
 
 .post-link:hover .post-title {
   color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .post-title {
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
-  transition: color 0.15s ease;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.45;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .post-date {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-fg-muted);
   white-space: nowrap;
   flex-shrink: 0;

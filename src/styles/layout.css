@@ -5,11 +5,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  animation: fadeIn 0.4s ease both;
+  position: relative;
+  z-index: 1;
+  animation: terminalIn 0.5s ease both;
 }
 
 .site-header {
   margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -17,15 +21,18 @@
 
 .site-title {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--color-fg);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-accent);
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px var(--color-accent-glow);
 }
 
 .site-title:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
+  text-shadow: 0 0 20px var(--color-accent-glow);
   text-decoration: none;
 }
 
@@ -35,7 +42,7 @@
 
 .site-footer {
   margin-top: 4rem;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--color-border);
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -45,10 +52,12 @@
 .footer-author {
   color: var(--color-fg-muted);
   text-decoration: none;
+  text-shadow: none;
 }
 
 .footer-author:hover {
   color: var(--color-accent);
+  text-shadow: 0 0 8px var(--color-accent-glow);
 }
 
 @media (max-width: 600px) {
