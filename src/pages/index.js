@@ -3,23 +3,12 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import "../styles/index.css"
 
-const formatLoginDate = () => {
-  const d = new Date()
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-  const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-  ]
-  const pad = n => String(n).padStart(2, "0")
-  return `${days[d.getDay()]} ${months[d.getMonth()]} ${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} ${d.getFullYear()}`
-}
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
-      <p className="last-login">Last login: {formatLoginDate()} on ttys000</p>
       {posts.length > 0 ? (
         <ul className="post-list">
           {posts.map((post, index) => {

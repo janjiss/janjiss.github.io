@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
       <div className="site-wrapper">
         <header className="site-header">
           <Link to="/" className="site-title">
-            janis.wtf<span className="cursor-blink">_</span>
+            janis.wtf
           </Link>
         </header>
         <main className="site-main">{children}</main>
